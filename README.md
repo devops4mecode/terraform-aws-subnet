@@ -73,7 +73,7 @@ Here are some examples of how you can use this module in your inventory structur
 ```hcl
   module "subnets" {
     source              = "devops4mecode/terraform-aws-subnet/aws"
-    version             = "0.13.0"
+    version             = "1.0.0"
     name                = "subnets"
     application         = "devops4me"
     environment         = "test"
@@ -92,7 +92,7 @@ Here are some examples of how you can use this module in your inventory structur
 ```hcl
   module "subnets" {
     source              = "devops4mecode/terraform-aws-subnet/aws"
-    version             = "0.13.0"
+    version             = "1.0.0"
     name                = "subnets"
     application         = "devops4me"
     environment         = "test"
