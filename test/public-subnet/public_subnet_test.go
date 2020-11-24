@@ -14,8 +14,8 @@ func Test(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "../gorun/public-subnet",
-		Upgrade:      true,
+		TerraformDir: "../../gorun/public-subnet",
+		Upgrade:true,
 	}
 
 	// This will run 'terraform init' and 'terraform application' and will fail the test if any errors occur

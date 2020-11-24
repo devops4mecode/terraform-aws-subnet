@@ -14,7 +14,7 @@ func Test(t *testing.T) {
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
-		TerraformDir: "../gorun/public-private-subnet",
+		TerraformDir: "../../gorun/public-private-subnet",
 		Upgrade:      true,
 	}
 
