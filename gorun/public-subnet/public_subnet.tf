@@ -1,0 +1,31 @@
+provider "aws" {
+  region = "ap-southeast-1"
+}
+
+module "vpc" {
+  source  = "devops4mecode/vpc/aws"
+  version = "1.3.0"
+
+  name        = "vpc"
+  application = "devops4me"
+  environment = "test"
+  label_order = ["environment", "application", "name"]
+
+  cidr_block = "10.0.0.0/16"
+}
+
+module "subnets" {
+  source = "./../../"
+
+  name        = "subnets"
+  application = "devops4me"
+  environment = "test"
+  label_order = ["environment", "application", "name"]
+
+  availability_zones = ["ap-southeast-1a", "ap-southeast-1b", "ap-southeast-1c"]
+  vpc_id             = module.vpc.vpc_id
+  type               = "public"
+  igw_id             = module.vpc.igw_id
+  cidr_block         = module.vpc.vpc_cidr_block
+  ipv6_cidr_block    = module.vpc.ipv6_cidr_block
+}
